@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.1.css">
+	<title>Psiholog A.P</title>
+</head>
+<body>
+	<header class="header-fix">
+    <div class="header-container">
+        <div class="logo-box">
+            <img src="logo.png" alt="Logo" class="logo-mic">
+        </div>
+
+        <nav class="nav-orizontal">
+            <ul>
+                <li><a href="index.html">Acasa</a></li>
+                <li><a href="Servicii.html">Servicii</a></li>
+                <li><a href="Despre.html">Despre mine</a></li>    
+                <li><a href="Resurse.html">Resurse</a></li>
+                <li><a href="faq.html">FAQ</a></li>   
+                <li><a href="Contact.html">Contact</a></li> 
+                <li><a href="Recenzii.html">Recenzii</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="continut-centrat">
+    <h1><center>Recenziile Pacientilor</center></h1>
+    </main>
+
+<hr>
+
+<main>
+        <section>
+            <h2>Ce spun cei cu care am lucrat</h2>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Lasă un gând despre colaborarea noastră</h2>
+            <p>Feedback-ul tău poate ajuta și alte persoane să prindă curaj pentru a începe terapia. Poți alege să rămâi complet anonim.</p>
+
+            <form id="feedback-form">
+                <p>
+                    <label for="nume-recenzie">Cum dorești să apari pe site? (Nume, Inițiale sau "Anonim"):</label><br>
+                    <input type="text" id="nume-recenzie" name="nume" placeholder="Ex: Anonim / Maria I." required>
+                </p>
+
+                <p>
+                    <label for="mesaj-recenzie">Mesajul tău:</label><br>
+                    <textarea id="mesaj-recenzie" name="mesaj" rows="6" cols="40" placeholder="Povestește scurt despre experiența ta..."></textarea>
+                </p>
+
+                <p>
+                    <strong>Opțiuni de confidențialitate:</strong><br>
+                    <input type="radio" id="anonim-da" name="vizibilitate" value="anonim" checked>
+                    <label for="anonim-da">Doresc să rămân anonim (nu se va afișa numele real).</label><br>
+                    
+                    <input type="radio" id="initiale" name="vizibilitate" value="initiale">
+                    <label for="initiale">Doresc să apar doar cu inițialele.</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="acord-publicare" name="acord" required>
+                    <label for="acord-publicare">Sunt de acord ca acest text să fie publicat pe site.</label>
+                </p>
+
+                <p>
+                    <button type="submit">Trimite Feedback</button>
+                </p>
+            </form>
+            <p><small>*Recenziile vor apărea pe site doar după ce vor fi verificate pentru a asigura protecția datelor personale.</small></p>
+        </section>
+    </main>
+
+    <hr>
+<script type="text/javascript">
+    emailjs.init("v_nY1_RPuCk-vvh6E");
+
+    const formularRecenzii = document.getElementById('feedback-form');
+
+    formularRecenzii.onsubmit = function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_94v2ecm', 'template_dgpfjej', this)
+            .then(function() {
+                alert("Mulțumesc pentru feedback! Recenzia a fost trimisă.");
+                formularRecenzii.reset();
+            })
+            .catch(function(error) {
+                alert("Hopa! Mesajul nu a putut fi trimis.");
+                console.log(error);
+            });
+    };
+</script>
+<footer>
+		<p><small>&copy; 2026 Psiholog A.P. Cabinet de Psihologie.</small></p>
+	</footer>
+</body>
+</html>
