@@ -63,7 +63,7 @@ h1 {
     position: -webkit-sticky;
     position: sticky;
     top:0;
-    z-index: 1001;
+    z-index: 1;
     font-size: 2.5rem;
     color: #8e5d5d;
     margin-bottom: 0px;
@@ -87,6 +87,7 @@ h2 {
     width: 100%;
     text-align: center;
     padding-bottom: 5px;
+    z-index: 1;
 }
 
 em {
@@ -94,6 +95,13 @@ em {
     font-size: 1.1rems;
 }
 
+nav {
+    position: sticky; /* sau fixed, ce ai folosit tu */
+    top: 0;
+    z-index: 9999;    /* Aceasta este linia magică */
+    background-color: #fff5f5; /* OBLIGATORIU: fundal opac ca să nu se vadă textul prin meniu */
+    width: 100%;
+}
 
 nav ul {
     display: flex;
