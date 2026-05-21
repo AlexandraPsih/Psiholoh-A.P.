@@ -26,7 +26,25 @@
         </nav>
     </div>
 </header>
+<button id="dark-mode-toggle" class="btn-toggle">Culoare Ecran</button>
 
+<script>
+    // Verificăm dacă utilizatorul a mai folosit Dark Mode în trecut
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Logica butonului: când dă click, schimbă modul și îl salvează în memorie
+    document.getElementById('dark-mode-toggle').onclick = function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    };
+</script>
 <main class="continut-centrat">
     <h1><center>Resurse</center></h1>
     </main>
