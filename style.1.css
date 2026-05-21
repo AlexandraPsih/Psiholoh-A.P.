@@ -344,3 +344,94 @@ footer {
         object-position: center 5%;
     }
 }
+.btn-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #8e5d5d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+.btn-toggle:hover {
+    background-color: #a36b6b;
+}
+/* ==========================================
+   REGULILE DEFINITIVE DE DARK MODE 
+   ========================================== */
+
+/* 1. Fundalul general al ecranului devine negru-gri închis */
+body.dark-mode {
+    background-color: #1a1515 !important;
+    color: #fcebeb !important;
+}
+
+/* 2. FORȚĂM toate containerele, secțiunile și div-urile să aibă fundal închis */
+body.dark-mode main,
+body.dark-mode section, 
+body.dark-mode div,
+body.dark-mode .login-container,
+body.dark-mode .hero-container {
+    background-color: #1a1515 !important; /* Sau #261f1f dacă vrei un gri un pic mai deschis decât fundalul */
+    color: #fcebeb !important;
+    background: #1a1515 !important;
+}
+
+/* 3. Meniul de sus (header) și fundalul din spatele titlurilor */
+body.dark-mode header,
+body.dark-mode .header-fix,
+body.dark-mode .header-container,
+body.dark-mode nav,
+body.dark-mode .nav-orizontal {
+    background-color: #1a1515 !important;
+    background: #1a1515 !important;
+    border-bottom-color: #443333 !important; /* Linia de sub meniu devine mai ștearsă */
+}
+
+/* 4. Titlurile (H1, H2) și textele importante îngroșate */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h1 span,
+body.dark-mode h2 span,
+body.dark-mode strong {
+    background-color: #1a1515 !important;
+    background: #1a1515 !important;
+    color: #e2b7b7 !important; /* Un roz pal, foarte odihnitor pentru ochi pe fundal negru */
+}
+
+/* 5. Primul paragraf de pe prima pagină (și toate celelalte paragrafe) */
+body.dark-mode p,
+body.dark-mode p span,
+body.dark-mode .intro-text,
+body.dark-mode main p:first-of-type {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #fcebeb !important; /* Text deschis la culoare */
+}
+
+/* 6. Link-urile din meniu în Dark Mode */
+body.dark-mode .nav-orizontal a {
+    color: #e2b7b7 !important;
+    background-color: transparent !important;
+}
+
+/* 7. Formularele și căsuțele de text (pentru Login/Contact/Recenzii) */
+body.dark-mode form {
+    background: #211a1a !important;
+    border-color: #443333 !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #2b2222 !important;
+    color: #ffffff !important;
+    border-color: #554444 !important;
+}
